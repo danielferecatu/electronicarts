@@ -1,0 +1,252 @@
+/*
+Responsive Drop Down Menu
+Licensed under http://creativecommons.org/licenses/by-sa/3.0/
+*/
+
+/*
+
+TABLE OF CONTENTS
+
+01 MENU BAR
+02 DROP DOWNS
+03 DESKTOP VERSION
+04 MOBILE VERSION
+
+*/
+
+
+
+
+
+
+/*  _______________________________________________
+
+    01 MENU BAR
+    _______________________________________________  */
+
+
+
+.dd_menu_wrapper {
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+    z-index:9999;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:12px;
+    line-height:21px;
+    color: #f5e06e;
+background: rgba(10, 10, 10,.6);
+text-transform: uppercase;
+    text-shadow:1px 1px 1px #000000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.dd_menu_wrapper a,
+.dd_menu_wrapper label {
+    color: #f5e06e;
+    text-shadow:1px 1px 1px #000000;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition:color .3s;
+    -moz-transition:color .3s;
+    -o-transition:color .3s;
+    -ms-transition:color .3s;
+    transition:color .3s;    
+}
+    .dd_menu_wrapper a:hover,
+    .dd_menu_wrapper label:hover {
+        color:#ffffff;
+    }
+.dd_menu {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    *zoom: 1;
+background: rgb(10, 10, 10);
+}
+
+.dd_menu li a:hover{
+color: #ffffff !important;
+}
+
+.dd_parent ul li a {
+display: block;
+transition: background 500ms;
+}
+
+.dd_parent ul li a:hover {
+background: rgba(200, 200, 200, .5);
+}
+
+    .dd_menu:before,
+    .dd_menu:after {
+        content: " "; 
+        display: table; 
+    }
+    .dd_menu:after {
+        clear: both;
+    }
+
+.dd_menu li {
+    position: relative;
+}
+.dd_menu > li {
+    float: left;
+}
+    .dd_menu li a {
+        padding: 10px 15px;
+        display: block;
+        color: #f5e06e !important;
+text-transform: uppercase;
+text-decoration: none;
+display: inline-block;
+font-weight: normal;
+font-size: .9em;
+    }
+    .dd_menu > li:hover {
+background-color: rgb(100, 100, 100);
+    }
+    .dd_menu li.dd_parent {
+        padding-right: 15px;
+    }
+    .dd_menu li.dd_parent > label {
+        display: block;
+        padding: 10px 20px 10px 15px;
+        background-image: url("../img/downArrow.png");
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+
+
+
+/*  _______________________________________________
+
+    02 DROP DOWNS
+    _______________________________________________  */
+
+
+
+.dd_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 999;
+    top: 41px;
+    left: -9999px;
+    min-width: 170px;
+    background: #111;
+}
+.dd_menu .dd_trigger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.dd_menu ul li a { padding: 2px 15px;}
+
+
+/*  _______________________________________________
+
+    03 DESKTOP VERSION
+    _______________________________________________  */
+
+
+
+
+@media screen and (min-width: 768px) {
+
+    .dd_menu > li:hover > ul {
+        left:auto;
+    }
+    .dd_toggle,
+    .dd_label {
+        display: none;
+    }
+
+}
+
+
+
+/*  _______________________________________________
+
+    04 MOBILE VERSION
+    _______________________________________________  */
+
+
+
+@media screen and (max-width: 767px) {
+
+    .dd_label {
+        display: block;
+        padding: 10px 15px;
+        cursor: pointer;
+        color:#ffffff;
+        background: #0e0e0e;
+    }
+    .dd_label:after {
+        width: 24px;
+        height: 24px;
+        content: url("../img/toggle.png");
+        float: right;
+    }
+    .dd_toggle,
+    .dd_toggle:checked {
+        width: 100%;
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        height: 40px;
+        margin: 0;
+        opacity: 0;
+    }
+    .dd_menu {
+        position: absolute;
+        background: #181818;
+        opacity:0;
+        visibility:hidden;
+    }
+        .dd_menu > li {
+            padding-right: 0;
+            float: none;
+        }
+        .dd_menu > li:hover {
+            background-color: transparent;
+        }
+            .dd_menu li ul {
+                display: block;
+                width: 100%;
+                top:auto;
+                left:auto;
+                width:auto;
+                z-index: 999;
+                visibility: visible;
+                margin-left: 12px;
+                background: none;
+            }
+    .dd_toggle:checked + .dd_menu {
+        opacity:1;
+        visibility:visible;
+    } 
+    .dd_menu .dd_trigger + ul {
+        max-height:0;
+        opacity:0;
+        visibility:hidden;
+    }
+    .dd_menu .dd_trigger:checked + ul {
+        position: static;
+        max-height:999px;
+        opacity:1;
+        visibility:visible;
+        z-index: 999;
+   }
+
+}

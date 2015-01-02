@@ -1,0 +1,41 @@
+/* CONFIG */
+
+
+.lhead, .lcount{
+  background: rgb(47, 241, 164);
+  font-size: 1.2em;
+}
+
+.lcount {
+  position: absolute;
+  right: -2%;
+  font-size: 0.9em;
+  padding: 9px 16px;
+  margin-top: -31px;
+  border-radius: 7px;
+}
+
+.lhead {
+  padding: 5px;
+  position: relative;
+  border-radius: 7px;
+}
+
+ol{
+  margin: 0px;
+  padding: 0px;
+}
+
+.lpart li{
+  margin: 0px;
+  padding: 0px;
+  padding-left: 20px;
+}
+
+#t_sitemap {
+  width: 95%;
+  background-color: #fff;
+  margin: 2.5%;
+}
+
+#t_sitemap, #t_sitemap tr, .lpart { border: 0;}
