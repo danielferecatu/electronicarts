@@ -1,0 +1,3 @@
+ var data_validation = '{"item2_text_1":{"required":true},"item3_email_1_verification":{"equalTo":"#item3_email_1"},"item3_email_1":{"email":true,"required":true},"item5_textarea_1":{"maxlength":"10000","required":true},"item6_url_1":{"url":true,"required":false},"reCaptcha":{"captcha":false,"messages":"try again"},"conditionalRules":{"item5":{"element":{"name":"name_field","operator":"is_not","value":""}}}}';
+ var data_jsplugins = '[]';
+ var data_cssplugins = '[]';
